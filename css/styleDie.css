@@ -1,0 +1,36 @@
+.zoom {
+    transition: 0.8s ease;
+    -moz-transition: 0.8s ease;
+    /* Firefox */
+    -webkit-transition: 0.8s ease;
+    /* Chrome - Safari */
+    -o-transition: 0.8s ease;
+    /* Opera */
+}
+
+.zoom:hover {
+    transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    /* Firefox */
+    -webkit-transform: scale(1.05);
+    /* Chrome - Safari */
+    -o-transform: scale(1.05);
+    /* Opera */
+    -ms-transform: scale(1.05);
+    /* IE9 */
+}
+
+.espacio {
+    display: flex;
+    justify-content: space-between;
+}
+
+.margin-l {
+    margin-left: 5px;
+}
+
+.sombra {
+    -webkit-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.65);
+    -moz-box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.65);
+    box-shadow: 10px 10px 5px -6px rgba(0, 0, 0, 0.65);
+}
