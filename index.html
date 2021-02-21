@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cars UD</title>
-    <link rel="stylesheet" href="/css/estilosUli.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="css/styleDie.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
@@ -15,24 +15,27 @@
 
     <header id="headerPrincipal">
         <nav>
+            <div class="contenedor-nav">
             <div class="logo">
-                <img src="/assets/img/icon-logo.svg" alt="Ir al Inicio">
+                <a href="#"><img src="/assets/img/icon-logo.svg" title="Ir al Inicio" alt="Home"></a>
             </div>
 
 
             <ul class="toolbar">
-                <li><a href="">Comprar</a></li>
-                <li><a href="">Ventas</a></li>
-                <li><a href="">FAQQ</a>
-                    <ul class="d-none">
+                <li><a href="#">Comprar</a></li>
+                <li><a href="#">Ventas</a></li>
+                <li id="menu-desp"><a href="#">FAQQ</a>
+                    <ul id= "links"class="d-none">
                         <li>Nosotros</li>
                         <li>Contacto</li>
                         <li>Redes</li>
                     </ul>
                 </li>
             </ul>
+        </div>
         </nav>
     </header>
+    <!-------- AUTOS --------->
     <section class="container mt-4">
         <h1 class="container mt-4" style="margin-bottom: 25px;">Las mejores ofertas hoy</h1>
 
@@ -311,6 +314,9 @@
 
 
     </section>
+
+    <!------- CODIGO DE JS ------->
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,120 @@
+/*ROOTS*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+
+$primario: white;
+$secundario: #0062A2;
+$negro: black;
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+    /*MIXINS*/
+    @mixin dispFlex($flexDir, $jCont, $aItms) {
+        display: flex;
+        flex-direction: $flexDir;
+        justify-content: $jCont;
+        align-items: $aItms;
+    }
+
+/*BODY*/
+body {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*HEADER*/
+header {
+    width: 100%;
+    height: 75%;
+    min-height: 700px;
+    background-color: rgba(19, 144, 246, 0.465);
+    position: relative;
+
+    /*NAVEGACION*/
+    nav {
+        width: 100%;
+        height: 7vh;
+        @include dispFlex(row, center, center);
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        background: rgba(19, 144, 246, 0.4);
+        .contenedor-nav { 
+            @include dispFlex(row, space-around, center);
+            width: 80%;
+            height: 100%;
+            .logo {
+                width: 60%;
+                height: 100%;
+                @include dispFlex(row, flex-start, center);
+
+                img {
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+            .toolbar {
+                width: 40%;
+                height: 100%;
+                @include dispFlex(row, space-around, center);
+                list-style: none;
+                margin: auto;
+                a{
+                    color: $primario;
+                    font-weight: 700;
+                    font-size: 1.2rem;
+                    text-transform:uppercase;
+                    letter-spacing: 0.05em;
+                    text-decoration: none;
+                    :link {
+                        color: $primario;
+                        text-decoration: none;
+                    }
+                    :active {
+                        @extend :link;
+                    }
+                }
+                #menu-desp::after {
+                    content: "";
+                    padding-left: 40px;
+                    background: url('../assets/img/icon-desplegable.svg');
+                    background-size: 30px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    cursor: pointer;
+                }
+                #menu-desp {position: relative;}
+            }
+        }
+    }
+}
+
+/*---- MENU DESPLEGABLE ----*/
+.desplegable {
+    @include dispFlex(column, center, flex-start);
+    width: 100%;
+    height: 100px;
+    padding-left: 5px;
+    background: rgba(19, 144, 246, 0.465);
+    position: absolute;
+    top: 30px;
+    left: 10px;
+
+    border-radius: 10px;
+    list-style: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
