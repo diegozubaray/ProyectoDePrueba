@@ -2,12 +2,16 @@
 var despeglable = document.querySelector('#menu-desp')
 var ul = document.querySelector('#links')
 
-despeglable.addEventListener('click', (e) => {
-    if(ul.classList.contains('d-none')){
-        ul.classList.remove('d-none')
+function menuDesplegable(param){
+    despeglable.addEventListener('mouseover', (e) => {
         ul.classList.add('desplegable')
-    } else {
-        ul.classList.add('d-none')
+        ul.classList.remove('d-none')
+    })
+
+    despeglable.addEventListener('mouseout', (e) => {
         ul.classList.remove('desplegable')
-    }
-})
+        ul.classList.add('d-none')
+    })
+}
+
+menuDesplegable() 

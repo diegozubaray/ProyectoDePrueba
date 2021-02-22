@@ -95,7 +95,9 @@ header {
                     background-position: center;
                     cursor: pointer;
                 }
-                #menu-desp {position: relative;}
+                #menu-desp {
+                    position: relative;
+                }
             }
         }
     }
@@ -111,6 +113,7 @@ header {
     position: absolute;
     top: 30px;
     left: 10px;
+    color: $primario;
 
     border-radius: 10px;
     list-style: none;

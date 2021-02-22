@@ -158,6 +158,7 @@ header nav .contenedor-nav .toolbar #menu-desp {
   position: absolute;
   top: 30px;
   left: 10px;
+  color: white;
   border-radius: 10px;
   list-style: none;
   font-size: 1.2rem;
