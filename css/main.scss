@@ -42,7 +42,7 @@ $xxl: 1400px;
 
     }
     
-    @include background($url){
+    @mixin background($url){
         background: url($url);
         background-size: cover;
         background-repeat: no-repeat;
