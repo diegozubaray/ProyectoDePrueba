@@ -26,6 +26,30 @@ $xxl: 1400px;
         align-items: $aItms;
     }
 
+    @mixin btn($wd, $ht, $color, $bkg, $br) {
+        width: $wd;
+        height: $ht;
+        color: $color;
+        background: $bkg;
+        border-radius: $br;
+    }
+
+    @mixin sliders{
+        width: 100%;
+        height: 100%;
+        @include dispFlex(column, center, center);
+        color: $primario;
+
+    }
+    
+    @include background($url){
+        background: url($url);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: local;
+    }
+
 /*BODY*/
 body {
     position: relative;
@@ -36,7 +60,7 @@ body {
 header {
     width: 100%;
     height: 75%;
-    min-height: 700px;
+    min-height: 75vh;
     background-color: rgba(19, 144, 246, 0.465);
     position: relative;
 
@@ -98,6 +122,24 @@ header {
                 #menu-desp {
                     position: relative;
                 }
+                li:hover li::after{
+                    width:100%;
+                }
+                li:hover{ 
+                    transform: scale(1.05);
+                    transition: width 1s ease-out;
+                }
+                
+                span:hover::after {
+                    content: "";
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 0.2rem;
+                    transition: width 1s ease-out;
+                    background: $primario;
+                }
             }
         }
     }
@@ -123,24 +165,6 @@ header {
     cursor: pointer;
 
 }
-li:hover li::after{
-    width:100%;
-}
-li:hover{ 
-    transform: scale(1.05);
-    transition: width 1s ease-out;
-}
-
-span:hover::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 0.2rem;
-    transition: width 1s ease-out;
-    background: $primario;
-}
 
 @keyframes animacionMenu {
     0% {
@@ -161,5 +185,16 @@ span:hover::after {
 
     100% {
         opacity: 1;
+    }
+}
+
+/*SLIDER*/
+#slider {
+    width: 100%;
+    height: 100%;
+    min-height: 75vh;
+    @include dispFlex(column, center, center);
+    div {
+        @include sliders;
     }
 }
