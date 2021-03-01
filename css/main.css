@@ -21,10 +21,10 @@ header {
   height: 75vh;
   background-color: rgba(19, 144, 246, 0.465);
   position: relative;
-  /*NAVEGACION*/
 }
 
-header nav {
+/*NAVEGACION*/
+#navBarPrincipal {
   width: 100%;
   height: 7vh;
   display: -webkit-box;
@@ -44,12 +44,11 @@ header nav {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  left: 0;
   z-index: 9999;
   background: rgba(19, 144, 246, 0.4);
 }
 
-header nav .contenedor-nav {
+#navBarPrincipal .contenedor-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,7 +65,7 @@ header nav .contenedor-nav {
   height: 100%;
 }
 
-header nav .contenedor-nav .logo {
+#navBarPrincipal .contenedor-nav .logo {
   width: 60%;
   height: 100%;
   display: -webkit-box;
@@ -84,12 +83,12 @@ header nav .contenedor-nav .logo {
           align-items: center;
 }
 
-header nav .contenedor-nav .logo img {
+#navBarPrincipal .contenedor-nav .logo img {
   width: 45px;
   height: 45px;
 }
 
-header nav .contenedor-nav .toolbar {
+#navBarPrincipal .contenedor-nav .toolbar {
   width: 40%;
   height: 100%;
   display: -webkit-box;
@@ -108,7 +107,7 @@ header nav .contenedor-nav .toolbar {
   margin: auto;
 }
 
-header nav .contenedor-nav .toolbar a {
+#navBarPrincipal .contenedor-nav .toolbar a {
   color: white;
   font-weight: 700;
   font-size: 1.2rem;
@@ -117,12 +116,12 @@ header nav .contenedor-nav .toolbar a {
   text-decoration: none;
 }
 
-header nav .contenedor-nav .toolbar a :link, header nav .contenedor-nav .toolbar a :active {
+#navBarPrincipal .contenedor-nav .toolbar a :link, #navBarPrincipal .contenedor-nav .toolbar a :active {
   color: white;
   text-decoration: none;
 }
 
-header nav .contenedor-nav .toolbar #menu-desp::after {
+#navBarPrincipal .contenedor-nav .toolbar #menu-desp::after {
   content: "";
   padding-left: 30px;
   background: url("../assets/icon/icon-desplegable.svg");
@@ -132,22 +131,22 @@ header nav .contenedor-nav .toolbar #menu-desp::after {
   cursor: pointer;
 }
 
-header nav .contenedor-nav .toolbar #menu-desp {
+#navBarPrincipal .contenedor-nav .toolbar #menu-desp {
   position: relative;
   top: 19px;
   height: 100%;
 }
 
-header nav .contenedor-nav .toolbar li:hover li::after {
+#navBarPrincipal .contenedor-nav .toolbar li:hover li::after {
   width: 100%;
 }
 
-header nav .contenedor-nav .toolbar li:hover {
+#navBarPrincipal .contenedor-nav .toolbar li:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
 }
 
-header nav .contenedor-nav .toolbar span:hover::after {
+#navBarPrincipal .contenedor-nav .toolbar span:hover::after {
   content: "";
   display: block;
   position: absolute;
@@ -230,7 +229,7 @@ header nav .contenedor-nav .toolbar span:hover::after {
 /*SLIDER*/
 #slider {
   width: 100%;
-  height: 90.6%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -244,7 +243,8 @@ header nav .contenedor-nav .toolbar span:hover::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
+  position: absolute;
+  top: 0;
 }
 
 #slider #slide_1, #slider #slide_2, #slider #slide_3 {
@@ -287,7 +287,7 @@ header nav .contenedor-nav .toolbar span:hover::after {
       -ms-flex-align: center;
           align-items: center;
   color: white;
-  background: rgba(33, 83, 177, 0.24);
+  background: rgba(39, 39, 39, 0.664);
 }
 
 #slider #slide_1 h1, #slider #slide_2 h1, #slider #slide_3 h1 {
@@ -324,10 +324,20 @@ header nav .contenedor-nav .toolbar span:hover::after {
   color: white;
   background: #0062A2;
   border-radius: 5px;
+  outline: none;
   border: none;
   font-weight: 900;
   font-size: 20px;
   text-transform: uppercase;
+}
+
+#slider #slide_1 .btn_buy button:first-of-type:hover, #slider #slide_1 .btn_buy button:hover:last-of-type, #slider #slide_2 .btn_buy button:first-of-type:hover, #slider #slide_2 .btn_buy button:hover:last-of-type, #slider #slide_3 .btn_buy button:first-of-type:hover, #slider #slide_3 .btn_buy button:hover:last-of-type {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
 
 #slider #slide_1 .btn_buy button:last-of-type, #slider #slide_2 .btn_buy button:last-of-type, #slider #slide_3 .btn_buy button:last-of-type {
@@ -336,28 +346,92 @@ header nav .contenedor-nav .toolbar span:hover::after {
   color: #0062A2;
   background: white;
   border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+#slider #slide_1 .btn_buy button:last-of-type:hover, #slider #slide_2 .btn_buy button:last-of-type:hover, #slider #slide_3 .btn_buy button:last-of-type:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
 }
 
 #slider #btn-prev, #slider #btn-next {
   width: 35px;
   height: 35px;
-  font-size: 2rem;
-  text-align: center;
   position: absolute;
-  top: 300px;
-  border: 2px solid white;
-  border-radius: 50%;
-  color: white;
-  background: transparent;
+  top: 335px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+#slider #btn-prev {
+  background-image: url(/assets/icon/icon-prev.svg);
+  left: 40px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  background-position: center;
+}
+
+#slider #btn-prev:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  transition: -webkit-transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out, -webkit-transform 0.1s ease-out;
+}
+
+#slider #btn-next {
+  right: 40px;
+  background-image: url(/assets/icon/icon-next.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: local;
+  background-position: center;
+}
+
+#slider #btn-next:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: -webkit-transform 0.1s ease-out;
+  transition: -webkit-transform 0.1s ease-out;
+  transition: transform 0.1s ease-out;
+  transition: transform 0.1s ease-out, -webkit-transform 0.1s ease-out;
 }
 
 #slide_1 {
+  background: url(/assets/img/slide1.jpg);
   height: 100%;
   width: 100%;
-  background: url(../assets/img/slide1.jpg);
   background-size: cover;
-  background-attachment: fixed;
+  background-attachment: local;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center center;
+}
+
+#slide_2 {
+  background: url(/assets/img/slide2.jpg);
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-attachment: local;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#slide_3 {
+  background: url(/assets/img/slide3.jpg);
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-attachment: local;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 /*# sourceMappingURL=main.css.map */

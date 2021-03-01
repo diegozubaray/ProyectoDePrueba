@@ -14,7 +14,7 @@
 <body>
 
     <header id="headerPrincipal">
-        <nav> <!--------- NAV BAR --------->
+        <nav id="navBarPrincipal"> <!--------- NAV BAR --------->
             <div class="contenedor-nav">
             <div class="logo">
                 <a href="#"><img src="/assets/icon/icon-logo.svg" title="Ir al Inicio" alt="Home"></a>
@@ -36,7 +36,8 @@
         </nav>
 
         <section id="slider"> <!---------- SLIDER ---------->
-            <div id="slide_1">
+            
+            <div id="slide_1" data-slide="slide-1">
                 <div class="pantalla">
                     <h1>Cambiar el auto depende de vos!</h1>
                     <h4>La manera segura de comprar o vender.</h4>
@@ -46,7 +47,7 @@
                 </div>
             </div>
            
-            <div id="slide_2" class="d-none">
+            <div id="slide_2" class="d-none" data-slide="slide-2">
                 <div class="pantalla">
                     <h1>Cobertura mecanica con mejor precio!</h1>
                     <h4>Extendiendola por 18 meses, %35 de descuento.</h4>
@@ -56,7 +57,7 @@
                 </div>
             </div>
 
-            <div id="slide_3" class="d-none">
+            <div id="slide_3" class="d-none" data-slide="slide-3">
                 <div class="pantalla">
                     <h1>Financiacion solo para vos!</h1>
                     <h4>Elegi tu auto, las cuotas y financia con tu DNI.</h4>
@@ -66,8 +67,8 @@
                 </div>
             </div>
 
-            <button id="btn-next">&gt;</button>
-            <button id="btn-prev">&lt;</button>
+            <button id="btn-next"></button>
+            <button id="btn-prev"></button>
         </section>
     </header>
     <!-------- AUTOS --------->

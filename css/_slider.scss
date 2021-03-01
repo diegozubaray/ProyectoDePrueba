@@ -1,0 +1,89 @@
+/*SLIDER*/
+#slider {
+    width: 100%;
+    height: 100%;
+    @include dispFlex(column, center, center);
+    position: absolute;
+    top: 0;
+    #slide_1, #slide_2, #slide_3 {
+        @include dispFlex(column, center, center);
+        @include sliders;
+        .pantalla {
+            @include sliders;
+            background: rgba(39, 39, 39, 0.664);
+        }
+        h1 {
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+        h4 {
+            font-weight: 100;
+            margin-bottom: 30px;
+        }
+        .btn_buy {
+            @include dispFlex(row, space-between, center);
+            width: 32%;
+            background: transparent;
+            button:first-of-type {
+                @include btn(275px, 50px, $primario, $secundario, 5px);
+                font-weight: 900;
+                font-size: 20px;
+                text-transform: uppercase;
+                &:hover {
+                    transform: scale(1.1);
+                    transition: transform 0.2s ease-out;
+                }
+            }
+            button:last-of-type {
+                @extend button:first-of-type;
+                @include btn(275px, 50px, $secundario, $primario, 5px);
+                &:hover {
+                    transform: scale(1.1);
+                    transition: transform 0.2s ease-out;
+                }
+            }
+        }
+    }
+    #btn-prev, #btn-next {
+        @include btn_slider(335px);
+    }
+    #btn-prev {
+        background-image: url(/assets/icon/icon-prev.svg);
+        left: 40px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: local;
+        background-position: center;
+        &:hover {
+            transform: scale(1.2);
+            transition: transform 0.1s ease-out;
+        }
+    }
+    #btn-next {
+        right: 40px;
+        background-image: url(/assets/icon/icon-next.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: local;
+        background-position: center;
+        &:hover {
+            transform: scale(1.2);
+            transition: transform 0.1s ease-out;
+        }
+    }
+}
+
+#slide_1 {
+    background: url(/assets/img/slide1.jpg);
+    @include slideBkg(center center);
+}
+
+#slide_2 {
+    background: url(/assets/img/slide2.jpg);
+    @include slideBkg(center center);
+}
+
+#slide_3 {
+    background: url(/assets/img/slide3.jpg);
+    @include slideBkg(center center);
+}

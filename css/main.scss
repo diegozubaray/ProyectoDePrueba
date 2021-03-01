@@ -18,42 +18,50 @@ $xxl: 1400px;
     outline: none;
 }
 
-    /*MIXINS*/
-    @mixin dispFlex($flexDir, $jCont, $aItms) {
-        display: flex;
-        flex-direction: $flexDir;
-        justify-content: $jCont;
-        align-items: $aItms;
-    }
+/*MIXINS*/
+@mixin dispFlex($flexDir, $jCont, $aItms) {
+    display: flex;
+    flex-direction: $flexDir;
+    justify-content: $jCont;
+    align-items: $aItms;
+}
 
-    @mixin btn($wd, $ht, $color, $bkg, $br) {
-        width: $wd;
-        height: $ht;
-        color: $color;
-        background: $bkg;
-        border-radius: $br;
-    }
+@mixin btn($wd, $ht, $color, $bkg, $br) {
+    width: $wd;
+    height: $ht;
+    color: $color;
+    background: $bkg;
+    border-radius: $br;
+    outline: none;
+    border: none;
+}
 
-    @mixin sliders{
-        width: 100%;
-        height: 100%;
-        @include dispFlex(column, center, center);
-        color: $primario;
-    }
+@mixin sliders{
+    width: 100%;
+    height: 100%;
+    @include dispFlex(column, center, center);
+    color: $primario;
+}
 
-    @mixin btn_slider($top){
-        width: 35px;
-        height: 35px;
-        font-size: 2rem;
-        text-align: center;
-        position: absolute;
-        top: $top;
-        border: 2px solid $primario;
-        border-radius: 50%;
-        color: $primario;
-        background: transparent;
-    }
-    
+@mixin slideBkg($position) {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-attachment: local;
+    background-repeat: no-repeat;
+    background-position: $position;
+}
+
+@mixin btn_slider($top){
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: $top;
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
 /*BODY*/
 body {
     position: relative;
@@ -66,180 +74,7 @@ header {
     height: 75vh;
     background-color: rgba(19, 144, 246, 0.465);
     position: relative;
-
-    /*NAVEGACION*/
-    nav {
-        width: 100%;
-        height: 7vh;
-        @include dispFlex(row, center, center);
-        color: white;
-        position: sticky;
-        top: 0;
-        left: 0;
-        z-index: 9999;
-        background: rgba(19, 144, 246, 0.4);
-        .contenedor-nav { 
-            @include dispFlex(row, space-around, center);
-            width: 80%;
-            height: 100%;
-            .logo {
-                width: 60%;
-                height: 100%;
-                @include dispFlex(row, flex-start, center);
-
-                img {
-                    width: 45px;
-                    height: 45px;
-                }
-            }
-            .toolbar {
-                width: 40%;
-                height: 100%;
-                @include dispFlex(row, space-around, center);
-                list-style: none;
-                margin: auto;
-                a{
-                    color: $primario;
-                    font-weight: 700;
-                    font-size: 1.2rem;
-                    text-transform:uppercase;
-                    letter-spacing: 0.05em;
-                    text-decoration: none;
-                    :link {
-                        color: $primario;
-                        text-decoration: none;
-                    }
-                    :active {
-                        @extend :link;
-                    }
-                }
-                #menu-desp::after {
-                    content: "";
-                    padding-left: 30px;
-                    background: url('../assets/icon/icon-desplegable.svg');
-                    background-size: 30px;
-                    background-repeat: no-repeat;
-                    background-position: center;
-                    cursor: pointer;
-                }
-                #menu-desp {
-                    position: relative;
-                    top: 19px;
-                    height: 100%;
-                }
-                li:hover li::after{
-                    width:100%;
-                }
-                li:hover{ 
-                    transform: scale(1.05);
-                }
-                span:hover::after {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    bottom: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 0.2rem;
-                    transition: width 5s linear;
-                    background: $primario;
-                }
-            }
-        }
-    }
 }
 
-/*---- MENU DESPLEGABLE ----*/
-.desplegable {
-    @include dispFlex(column, space-around, flex-start);
-    width: 125px;
-    height: 130px;
-    padding: 5px 10px 10px;
-    position: absolute;
-    top: 30px;
-    left: 10px;
-    
-    background: rgba(19, 144, 246, 0.465);
-    color: $primario;
-    border-radius: 10px;
-    list-style: none;
-    font-size: 1.5rem;
-    font-weight: 600;
-    animation: animacionMenu 0.5s linear alternate;
-    cursor: pointer;
-}
-
-@keyframes animacionMenu {
-    0% {
-        opacity: 0;
-    }
-
-    25% {
-        opacity: 0.25;
-    }
-
-    50% {
-        opacity: 0.5;
-    }
-
-    75% {
-        opacity: 0.75;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-/*SLIDER*/
-#slider {
-    width: 100%;
-    height: 90.6%;
-    @include dispFlex(column, center, center);
-    position: relative;
-    #slide_1, #slide_2, #slide_3 {
-        @include dispFlex(column, center, center);
-        @include sliders;
-        .pantalla {
-            @include sliders;
-            background: rgba(33, 83, 177, 0.24);
-        }
-        h1 {
-            font-weight: 900;
-            margin-bottom: 20px;
-        }
-        h4 {
-            font-weight: 100;
-            margin-bottom: 30px;
-        }
-        .btn_buy {
-            @include dispFlex(row, space-between, center);
-            width: 32%;
-            background: transparent;
-            button:first-of-type {
-                @include btn(275px, 50px, $primario, $secundario, 5px);
-                border: none;
-                font-weight: 900;
-                font-size: 20px;
-                text-transform: uppercase;
-            }
-            button:last-of-type {
-                @extend button:first-of-type;
-                @include btn(275px, 50px, $secundario, $primario, 5px);
-            }
-        }
-    }
-    #btn-prev, #btn-next {
-        @include btn_slider(300px);
-    }
-}
-
-#slide_1 {
-    height: 100%;
-    width: 100%;
-    background: url(../assets/img/slide1.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-position: center;
-}
+@import "./navBar";
+@import "./slider"
