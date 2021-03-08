@@ -12,6 +12,8 @@
         @include dispFlex(row, space-around, center);
         width: 80%;
         height: 100%;
+        position: relative;
+        top: 0;
         .logo {
             width: 60%;
             height: 100%;
@@ -27,7 +29,7 @@
             height: 100%;
             @include dispFlex(row, space-around, center);
             list-style: none;
-            margin: auto;
+            margin: 0;
             a{
                 color: $primario;
                 font-weight: 700;

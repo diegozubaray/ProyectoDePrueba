@@ -63,6 +63,8 @@ header {
           align-items: center;
   width: 80%;
   height: 100%;
+  position: relative;
+  top: 0;
 }
 
 #navBarPrincipal .contenedor-nav .logo {
@@ -104,7 +106,7 @@ header {
       -ms-flex-align: center;
           align-items: center;
   list-style: none;
-  margin: auto;
+  margin: 0;
 }
 
 #navBarPrincipal .contenedor-nav .toolbar a {
